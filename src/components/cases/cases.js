@@ -1,0 +1,44 @@
+import React from "react";
+import "./cases.scss";
+import olympian from "../../assets/olympian.jpeg";
+import skhokho from "../../assets/skhokho.jpeg";
+import dragon from "../../assets/dragon.jpeg";
+
+const Cases = () => {
+  const imageCards = [
+    {
+      imageSrc: olympian,
+      text: "The Olympian",
+      para: "The only olympian in the world to do her olympic in 2020",
+    },
+    {
+      imageSrc: dragon,
+      text: "The saving Jar",
+      para: "The only olympian in the world to do her olympic in 2020",
+    },
+    {
+      imageSrc: skhokho,
+      text: "Skhokho seMali",
+      para: "Helping South Africa became #cashCleva with Skhokho and Tymebank",
+    },
+  ];
+  return (
+    <div className="home-page">
+      <h3>Case studies</h3>
+      <div className="grid-container">
+        {imageCards.map((card, index) => (
+          <div key={index} className="image-card">
+            <img src={card.imageSrc} alt={`Imag ${index + 1}`} />
+            <div className="image-text">
+              <h2 className="text-head">{card.text}</h2>
+              <p>{card.para}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p>You will be in good company</p>
+    </div>
+  );
+};
+
+export default Cases;

@@ -1,0 +1,53 @@
+.wedo-page {
+  height: 100%;
+  height: "300px";
+  padding-bottom: 25px;
+
+  h3 {
+    text-align: start;
+    padding: auto;
+    padding: 2px 17px;
+    margin: 10px 173px;
+    font-size: 20px;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-template-rows: repeat(1, 1fr); /* 4 rows */
+    gap: 15px;
+    padding: 38px;
+    margin: 19px;
+
+    .grid-item {
+      .grid-item {
+        border: 1px solid #ccc; /* Optional border or styling for grid items */
+        padding: 20px;
+        text-align: center;
+      }
+    }
+    p {
+      text-align: start;
+      color: #000;
+      font-size: 17px;
+    }
+
+    .card-head {
+      font-weight: 500;
+      font-size: 16px;
+      background: 0 0;
+      color: black;
+      padding-bottom: 1em;
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    .card-icon {
+      text-align: start;
+      margin-bottom: 2em;
+      margin-top: 1em;
+      width: 100%;
+      //   height: 100%;
+    }
+  }
+}

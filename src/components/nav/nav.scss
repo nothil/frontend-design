@@ -1,0 +1,98 @@
+@import "../../scss/mixin";
+
+.navbar-container {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  background-color: var(--darkPurple);
+  padding-bottom: 11px;
+  z-index: 1000;
+  padding-top: 11px;
+  min-height: 69px;
+  position: relative;
+
+  .navbar-brand {
+    width: 119px;
+    height: 39.6px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .brand-center {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+
+    a {
+      padding: 4px 18px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #dbdbdb;
+      border-radius: 50px;
+      opacity: 1;
+    }
+  }
+
+  .left-content {
+    display: flex;
+    flex-direction: row;
+    min-width: 180px;
+    align-items: center;
+
+    .icon {
+      padding: 3px;
+
+      i {
+        font-size: 22px;
+      }
+    }
+
+    .name {
+      font-size: 15px;
+      padding-left: 7px;
+      font-weight: 600;
+    }
+  }
+
+  .item-container {
+    .select__value-container {
+      padding-right: 0;
+      padding-left: 0;
+
+      .select__single-value,
+      .select__menu__option .abbreviation {
+        max-width: 100%;
+        font-size: 16px;
+        color: var(--darkPurple);
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+    }
+
+    .select__indicator {
+      padding-left: 2px;
+    }
+  }
+
+  @media (max-width: 550px) {
+    .left-content {
+      min-width: 160px;
+
+      .icon {
+        i {
+          font-size: 20px;
+        }
+      }
+
+      .name {
+        font-size: 13px;
+      }
+    }
+  }
+}
