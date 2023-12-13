@@ -6,7 +6,7 @@
   -Api
 - SQL
 
-## Run these commands to get started
+## Run these commands to get started with front-end
 
 `git clone https://github.com/nothil/frontend-design.git`
 
@@ -16,13 +16,21 @@
 
 ### Check the complete website on localhost:3000
 
-### This website fetches the data from the bd MYsql.
+### This website fetches the data from the bd MYsql. so the brands section will be empty until the sever is up
 
-### To run the server navigate to the sever folder and run
+## To run the server navigate to the sever folder(navigate to src/server) and run
 
 `node app.js`
 
-### sever will run at port:3000
+### These are the DB connection properties you may update to connect to yours
+
+`user: "postgres",
+  host: "localhost",
+  database: "your-database",
+  password: "your-password",
+  port: 5432,`
+
+### sever will run at port:3001
 
 `check http://localhost:3001/brands`
 

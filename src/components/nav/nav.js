@@ -10,11 +10,7 @@ const Nav = () => {
           <li className="nav-item">
             <img alt="logo" height="{45.25}" src={Logo} width="100" />
           </li>
-          <div className="left-content">
-            <div className="icon">
-              <i className="fas fa-lock" />
-            </div>
-          </div>
+          <div className="left-content"></div>
         </ul>
       </div>
       <div className="brand-center">
@@ -29,6 +25,11 @@ const Nav = () => {
         </a>
         <a className="navbar-brand mx-auto" href="/">
           Contact
+        </a>
+      </div>
+      <div className="brand-right">
+        <a className="navbar-brand mx-auto" href="/">
+          lets talk
         </a>
       </div>
     </nav>

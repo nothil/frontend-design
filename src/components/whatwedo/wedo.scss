@@ -7,8 +7,20 @@
     text-align: start;
     padding: auto;
     padding: 2px 17px;
-    margin: 10px 173px;
-    font-size: 20px;
+    margin: 4px 93px;
+    font-size: 17px;
+    position: relative;
+    font-weight: 400;
+  }
+  h3::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    // left: 110%;
+    height: 6px;
+    width: 20px; /* Adjust the length of the dash */
+    background-color: var(--active);
+    left: -29px;
   }
 
   .grid-container {

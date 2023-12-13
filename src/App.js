@@ -1,4 +1,5 @@
 import "./App.css";
+
 import Nav from "./components/nav/nav";
 import Footer from "./components/footer/footer";
 import Home from "./components/home/home";

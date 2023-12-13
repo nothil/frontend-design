@@ -1,5 +1,8 @@
 import React from "react";
 import "./cases.scss";
+
+// import "antd/dist/antd.css";
+
 import olympian from "../../assets/olympian.jpeg";
 import skhokho from "../../assets/skhokho.jpeg";
 import dragon from "../../assets/dragon.jpeg";
@@ -25,6 +28,7 @@ const Cases = () => {
   return (
     <div className="home-page">
       <h3>Case studies</h3>
+
       <div className="grid-container">
         {imageCards.map((card, index) => (
           <div key={index} className="image-card">
@@ -36,7 +40,8 @@ const Cases = () => {
           </div>
         ))}
       </div>
-      <p>You will be in good company</p>
+
+      <h3>You'll be in good company</h3>
     </div>
   );
 };
