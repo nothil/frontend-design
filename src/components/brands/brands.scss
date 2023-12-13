@@ -1,4 +1,9 @@
-.cases-container {
+.cases-page {
+  h2 {
+    text-align: start;
+  }
+}
+.brands-container {
   display: grid;
   grid-template-columns: 100px 100px 100px;
   grid-gap: 10px;
@@ -22,6 +27,9 @@
     grid-gap: 50px;
     // sbackground-color: #fff;
     // color: #444;
+    img {
+      width: 122px;
+    }
     .wrapper .box {
       //   background-color: #444;
       color: #fff;

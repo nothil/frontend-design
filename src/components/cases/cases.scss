@@ -1,3 +1,8 @@
+.home-page {
+  p {
+    text-align: start;
+  }
+}
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 2 columns */

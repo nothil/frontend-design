@@ -5,22 +5,21 @@ const Brands = () => {
   const [brands, setBrands] = useState([]);
 
   useEffect(() => {
-    // Fetch brand data from your server
-    fetch("http://localhost:3001/brands") // Replace with your actual endpoint
+    // Fetch brand data from the server
+    fetch("http://localhost:3001/brands")
       .then((response) => response.json())
       .then((data) => {
-        // Update state with fetched brand data
         setBrands(data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
-  }, []); // Empty dependency array to execute this effect only once
+  }, []);
 
   return (
     <div className="cases-page">
-      <h2>Brands</h2>
-      <div className="cases-container">
+      <h2>Trusted by leading Brands</h2>
+      <div className="brands-container">
         <div className="wrapper">
           {brands.map((brand, index) => {
             // Convert byte data to Blob
@@ -32,10 +31,9 @@ const Brands = () => {
 
             return (
               <div
-                className={`box ${String.fromCharCode(97 + index)}`}
+                className={` wrapper ${String.fromCharCode(97 + index)}`}
                 key={index}
               >
-                {/* Use the object URL as the image source */}
                 <img src={imageUrl} alt={brand.name} />
               </div>
             );

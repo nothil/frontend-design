@@ -1,13 +1,14 @@
-# Front-End website using ReactJs and Api
+## Front-End website using ReactJs and Dynamic data from the Api
 
 - Scss
 - Javascript
   -NodeJS
-  -API
+  -Api
+- SQL
 
-## Run these commands to run the website
+## Run these commands to get started
 
-`git clone https://github.com/`
+`git clone https://github.com/nothil/frontend-design.git`
 
 `npm install`
 
@@ -15,4 +16,18 @@
 
 ### Check the complete website on localhost:3000
 
-### I have deployed this website on Vercel for non developers to check it out.
+### This website fetches the data from the bd MYsql.
+
+### To run the server navigate to the sever folder and run
+
+`node app.js`
+
+### sever will run at port:3000
+
+`check http://localhost:3001/brands`
+
+### Api to return all brands from the db and
+
+`check http://localhost:3001/brands?filter=brand`
+
+### Api to filter brand list

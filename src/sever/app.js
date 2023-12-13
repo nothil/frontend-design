@@ -51,18 +51,31 @@ async function initializeDatabase() {
 
       // Insert sample data (replace this with your data)
       const sampleBrands = [
-        { name: "Brand 1", imagePath: getImagePath("skhokho.jpeg") },
-        // Add more brands and image paths as needed
+        // { name: "Brand 1", imagePath: getImagePath("sntam.jpeg") },
+        { name: "Brand 2", imagePath: getImagePath("tyme-bank-black.jpeg") },
+        { name: "Brand 3", imagePath: getImagePath("distell-black.jpg") },
+        { name: "Brand 4", imagePath: getImagePath("pnp-black.jpg") },
+        { name: "Brand 5", imagePath: getImagePath("engen-black.jpg") },
+        { name: "Brand 6", imagePath: getImagePath("sanlam.jpeg") },
+        { name: "Brand 7", imagePath: getImagePath("tgf.jpeg") },
+        { name: "Brand 8", imagePath: getImagePath("sntam.jpeg") },
+        { name: "Brand 9", imagePath: getImagePath("spotify-black.jpg") },
+        { name: "Brand 10", imagePath: getImagePath("wesgrow-black.jpg") },
+        { name: "Brand 11", imagePath: getImagePath("multichoice-black.jpg") },
+        { name: "Brand 13", imagePath: getImagePath("nike.jpg") },
+        { name: "Brand 14", imagePath: getImagePath("bbc.jpeg") },
       ];
 
       // Insert each brand into the database
-      for (const brand of sampleBrands) {
-        const imageBuffer = fs.readFileSync(brand.imagePath);
-        await client.query("INSERT INTO brands (name, image) VALUES ($1, $2)", [
-          brand.name,
-          imageBuffer,
-        ]);
-      }
+      try {
+        for (const brand of sampleBrands) {
+          const imageBuffer = fs.readFileSync(brand.imagePath);
+          await client.query(
+            "INSERT INTO brands (name, image) VALUES ($1, $2)",
+            [brand.name, imageBuffer]
+          );
+        }
+      } catch (error) {}
 
       console.log(
         "Initialization complete: Brands inserted into the database."
