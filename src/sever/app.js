@@ -1,6 +1,6 @@
 const express = require("express");
 const mysql = require("mysql");
-const fs = require("fs");
+const fs = require("fs").promises;
 const { log } = require("console");
 const { Pool } = require("pg");
 const path = require("path");
@@ -17,8 +17,28 @@ const pool = new Pool({
   host: "localhost",
   database: "postgres",
   password: "pass",
-  port: 5432, // Specify your port here (5432 for PostgreSQL by default)
+  port: 5432,
 });
+
+function getImagePath(imageFilename) {
+  return path.join(__dirname, imageFilename);
+}
+
+const sampleBrands = [
+  { name: "Brand 1", imagePath: getImagePath("sntam.jpeg") },
+  { name: "Brand 2", imagePath: getImagePath("tyme-bank-black.jpeg") },
+  { name: "Brand 3", imagePath: getImagePath("distell-black.jpg") },
+  { name: "Brand 4", imagePath: getImagePath("pnp-black.jpg") },
+  { name: "Brand 5", imagePath: getImagePath("engen-black.jpg") },
+  { name: "Brand 6", imagePath: getImagePath("sanlam.jpeg") },
+  { name: "Brand 7", imagePath: getImagePath("tfg.jpeg") },
+  { name: "Brand 8", imagePath: getImagePath("sntam.jpeg") },
+  { name: "Brand 9", imagePath: getImagePath("spotify-black.jpg") },
+  { name: "Brand 10", imagePath: getImagePath("wesgrow-black.jpg") },
+  { name: "Brand 11", imagePath: getImagePath("multichoice-black.jpg") },
+  { name: "Brand 13", imagePath: getImagePath("nike.jpg") },
+  { name: "Brand 14", imagePath: getImagePath("bbc.jpeg") },
+];
 
 // Function to initialize and insert data into the database
 async function initializeDatabase() {
@@ -27,16 +47,12 @@ async function initializeDatabase() {
     client = await pool.connect();
 
     // Check if the brands table exists
-    console.log("Connected to the database");
     const tableExists = await client.query(
       "SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'brands')"
     );
 
-    console.log("Checking if table exists");
-
     if (!tableExists.rows[0].exists) {
       // Create the brands table if it doesn't exist
-      console.log("Table does not exist: creating....");
       await client.query(`
           CREATE TABLE brands (
             id SERIAL PRIMARY KEY,
@@ -45,37 +61,18 @@ async function initializeDatabase() {
           )
         `);
 
-      function getImagePath(imageFilename) {
-        return path.join(__dirname, imageFilename);
-      }
-
-      // Insert sample data (replace this with your data)
-      const sampleBrands = [
-        // { name: "Brand 1", imagePath: getImagePath("sntam.jpeg") },
-        { name: "Brand 2", imagePath: getImagePath("tyme-bank-black.jpeg") },
-        { name: "Brand 3", imagePath: getImagePath("distell-black.jpg") },
-        { name: "Brand 4", imagePath: getImagePath("pnp-black.jpg") },
-        { name: "Brand 5", imagePath: getImagePath("engen-black.jpg") },
-        { name: "Brand 6", imagePath: getImagePath("sanlam.jpeg") },
-        { name: "Brand 7", imagePath: getImagePath("tgf.jpeg") },
-        { name: "Brand 8", imagePath: getImagePath("sntam.jpeg") },
-        { name: "Brand 9", imagePath: getImagePath("spotify-black.jpg") },
-        { name: "Brand 10", imagePath: getImagePath("wesgrow-black.jpg") },
-        { name: "Brand 11", imagePath: getImagePath("multichoice-black.jpg") },
-        { name: "Brand 13", imagePath: getImagePath("nike.jpg") },
-        { name: "Brand 14", imagePath: getImagePath("bbc.jpeg") },
-      ];
-
-      // Insert each brand into the database
-      try {
-        for (const brand of sampleBrands) {
-          const imageBuffer = fs.readFileSync(brand.imagePath);
+      for (const brand of sampleBrands) {
+        try {
+          const imageBuffer = await fs.readFile(brand.imagePath);
           await client.query(
             "INSERT INTO brands (name, image) VALUES ($1, $2)",
             [brand.name, imageBuffer]
           );
+          console.log(`Inserted brand: ${brand.name}`);
+        } catch (error) {
+          console.error(`Error inserting brand '${brand.name}':`, error);
         }
-      } catch (error) {}
+      }
 
       console.log(
         "Initialization complete: Brands inserted into the database."
