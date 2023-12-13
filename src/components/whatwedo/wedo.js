@@ -14,7 +14,7 @@ const WhatWedo = () => {
             <img src={Icon} alt="" />
           </div>
 
-          <div className="card-head">Web Development</div>
+          <div className="card-head">Web development</div>
           <p>
             Automating tasks and processes in your business streamlines
             workflows, increases productivity and in some instances gives you a
@@ -29,7 +29,7 @@ const WhatWedo = () => {
             <img src={AppDev} alt="" />
           </div>
 
-          <div className="card-head">User experience & Design</div>
+          <div className="card-head">User experience & design</div>
           <p>
             Automating tasks and processes in your business streamlines
             workflows, increases productivity and in some instances gives you a
@@ -43,7 +43,7 @@ const WhatWedo = () => {
             <img src={Icons} alt="" />
           </div>
 
-          <div className="card-head">Mobile app Development</div>
+          <div className="card-head">Mobile app development</div>
           <p>
             Automating tasks and processes in your business streamlines
             workflows, increases productivity and in some instances gives you a
