@@ -10,6 +10,9 @@
   background-position: center;
   position: relative;
   display: "flex";
+  img {
+    width: -webkit-fill-available;
+  }
 
   .image-text {
     position: absolute;
