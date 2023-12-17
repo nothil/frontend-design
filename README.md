@@ -18,7 +18,7 @@
 
 ### This website fetches the data from the bd MYsql. so the brands section will be empty until the sever is up
 
-## To run the server navigate to the sever folder(navigate to src/server) and run
+### To run the server navigate to the sever folder(navigate to src/server) and run
 
 `node app.js`
 

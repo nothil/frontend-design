@@ -2,11 +2,43 @@
 
 .footer {
   width: 100%;
-  display: flex;
+  // display: flex;
   padding: 20px 5%;
-  flex-direction: column;
   background-color: var(--darkPurple);
-  justify-content: space-between;
+  color: var(--white);
+
+  .content-left {
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+  }
+
+  .footer-item {
+    text-align: justify;
+    a {
+      text-decoration: none;
+      color: var(--white);
+    }
+  }
+  h3 {
+    text-align: start;
+    padding: auto;
+    padding: 2px 17px;
+    margin: 4px 93px;
+    font-size: 17px;
+    position: relative;
+    font-weight: 400;
+  }
+  h3::before {
+    content: "";
+    position: absolute;
+    top: 9%;
+    // left: 110%;
+    height: 6px;
+    width: 20px; /* Adjust the length of the dash */
+    background-color: var(--active);
+    left: -29px;
+  }
 
   @include sm-screen {
     flex-direction: row;

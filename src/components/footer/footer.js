@@ -5,30 +5,24 @@ const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <footer className="footer">
-      <div className="static-left">
-        <div className="content-left">
-          <div className="footer-item">
-            <a className="link" href="/" target="_blank">
-              Terms & conditions
-            </a>
-          </div>
-          <div className="footer-item">
-            <a className="link" href="/" target="_blank">
-              Privacy policy
-            </a>
-          </div>
-          <div className="footer-item">
-            <a className="link" href="/" target="_blank">
-              Facebook
-            </a>
-          </div>
-          <div className="footer-item">
-            <span className="link">
-              Copyright © Nothile
-              {` ${year}`}
-            </span>
-          </div>
+      <h3>contact us</h3>
+
+      <div className="content-left">
+        <h2>
+          Have a project in mind <br /> Lets make it happen
+        </h2>
+        <div className="footer-item">
+          <a className="link" href="/" target="_blank">
+            22 Street name <br />
+            Cape Town, South Africa <br />
+            +277250746
+          </a>
         </div>
+
+        <span className="link">
+          Copyright © Nothile
+          {` ${year}`}
+        </span>
       </div>
     </footer>
   );

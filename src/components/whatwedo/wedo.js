@@ -8,6 +8,10 @@ const WhatWedo = () => {
   return (
     <div className="wedo-page">
       <h3>Wha we do</h3>
+      <h2>
+        we offer a complete range of bespoke design and <br /> development
+        services to help your turn your ideas into <br /> digital masterpiece
+      </h2>
       <div className="grid-container">
         <div className="col-lg-4-md col-sm-12">
           <div className="card-icon">
