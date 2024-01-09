@@ -40,3 +40,7 @@
 `check http://localhost:3001/brands?filter=brand`
 
 ## Api to filter brand list
+
+## I have deployed this website on vercel
+
+[click here](https://frontend-design-swart.vercel.app/)
